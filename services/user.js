@@ -11,17 +11,21 @@ class UserService {
       firstName: userDTO.firstName,
       lastName: userDTO.lastName
     }
-    const user = await UserModel.create(userObj)
-    if(!userObj) {
+    const userCreated = await UserModel.create(userObj)
+    if(!userCreated) {
       return {
         success: false,
-        reason: 'Error Creating User'
+        userCreated: 'Error Creating User'
       }
     }
     return {
       success: true,
-      user
+      userCreated
     }
+  }
+  async getAllUsers() {
+    const users = await UserModel.find().lean()
+    return users
   }
 }
 
