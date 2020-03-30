@@ -3,8 +3,9 @@ const config = require('./config/config');
 const mongoose = require('mongoose');
 const routes = require('./api/routes/index');
 const app = express();
+const bodyParser = require('body-parser');
 
-
+app.use(bodyParser.json())
 app.use('/v2/server', routes());
 
 
