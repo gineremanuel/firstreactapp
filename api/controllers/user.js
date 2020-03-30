@@ -7,7 +7,7 @@ module.exports = {
     try {
       const body = req.body;
       const userDTO = {
-        userName: body.username,
+        userName: body.userName,
         password: body.password,
         firstName: body.firstName,
         lastName: body.lastName

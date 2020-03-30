@@ -6,7 +6,7 @@ class UserService {
 
   async createUser(userDTO) {
     let userObj = {
-      userName: userDTO.username,
+      userName: userDTO.userName,
       password: userDTO.password,
       firstName: userDTO.firstName,
       lastName: userDTO.lastName
