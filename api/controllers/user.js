@@ -5,19 +5,13 @@ module.exports = {
   
   async createUser(req, res) {
     try {
-      const body = req.body;
-      const userDTO = {
-        userName: body.userName,
-        password: body.password,
-        firstName: body.firstName,
-        lastName: body.lastName
-      }
+      const userDTO = req.body;
       const userService = new UserService();
-      const { success, reason, userCreated} = await userService.createUser(userDTO);
+      const { success, reason, user} = await userService.createUser(userDTO);
       if(!success) {
         return res.status(422).json({message: reason});
       }
-      return res.status(200).json(userCreated);
+      return res.status(200).json(user);
     }catch(e) {
       return res.status(500).json(e);
     }
