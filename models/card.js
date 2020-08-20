@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const Schema = new Schema({
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
-    description: {
-        type: String,
-    }
+let cardSchema = new mongoose.Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  description: {
+    type: String,
+  }
 },
 {
 timestamps: true,
